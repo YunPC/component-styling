@@ -1,23 +1,64 @@
-import logo from './logo.svg'
-import './App.css'
+import Button from './components/Button'
+import './App.scss'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="buttons">
+        <Button size="large">Button</Button>
+        <Button>Button</Button>
+        <Button size="small">Button</Button>
+      </div>
+      <div className="buttons">
+        <Button color="gray" size="large">
+          Button
+        </Button>
+        <Button color="gray">Button</Button>
+        <Button color="gray" size="small">
+          Button
+        </Button>
+      </div>
+      <div className="buttons">
+        <Button color="pink" size="large">
+          Button
+        </Button>
+        <Button color="pink">Button</Button>
+        <Button size="small" color="pink">
+          Button
+        </Button>
+      </div>
+      <div className="buttons">
+        <Button outline size="large">
+          Button
+        </Button>
+        <Button color="gray" outline>
+          Button
+        </Button>
+        <Button size="small" outline color="pink">
+          Button
+        </Button>
+      </div>
+      <div className="buttons">
+        <Button size="large" fullWidth className="customized-button">
+          Button
+        </Button>
+        <Button color="gray" size="large" fullWidth>
+          Button
+        </Button>
+        <Button
+          size="large"
+          color="pink"
+          fullWidth
+          onClick={() => {
+            console.log('click')
+          }}
+          onMouseMove={() => {
+            console.log('move')
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          Button
+        </Button>
+      </div>
     </div>
   )
 }
