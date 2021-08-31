@@ -1,4 +1,5 @@
 import Button from './components/Button'
+import './App.scss'
 
 function App() {
   return (
