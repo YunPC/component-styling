@@ -39,7 +39,7 @@ function App() {
         </Button>
       </div>
       <div className="buttons">
-        <Button size="large" fullWidth>
+        <Button size="large" fullWidth className="customized-button">
           Button
         </Button>
         <Button color="gray" size="large" fullWidth>
