@@ -22,7 +22,7 @@ const StyledButton = styled.button`
 
   /* 색상 */
   ${(props) => {
-    const color = props.theme.blue
+    const color = props.theme[props.color]
     return css`
       background: ${color};
       &:hover {
@@ -40,8 +40,16 @@ const StyledButton = styled.button`
   }
 `
 
-function Button({ children, ...rest }) {
-  return <StyledButton {...rest}>{children}</StyledButton>
+function Button({ children, color, ...rest }) {
+  return (
+    <StyledButton color={color} {...rest}>
+      {children}
+    </StyledButton>
+  )
+}
+
+Button.defaultProps = {
+  color: 'blue',
 }
 
 export default Button

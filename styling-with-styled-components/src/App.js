@@ -21,6 +21,8 @@ function App() {
     <ThemeProvider theme={palette}>
       <AppBlock>
         <Button>Button</Button>
+        <Button color="gray">Button</Button>
+        <Button color="pink">Button</Button>
       </AppBlock>
     </ThemeProvider>
   )
