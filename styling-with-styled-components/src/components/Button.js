@@ -13,6 +13,7 @@ const colorStyles = css`
       &:active {
         background: ${darken(0.1, selected)};
       }
+
       ${(props) =>
         props.outline &&
         css`
@@ -49,6 +50,19 @@ const sizeStyles = css`
   `}
 `
 
+const fullWidthStyle = css`
+  ${({ fullWidth }) =>
+    fullWidth &&
+    css`
+      width: 100%;
+      justify-content: center;
+      &:not(:first-child) {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+    `}
+`
+
 const StyledButton = styled.button`
   /* 공통 스타일 */
   display: inline-flex;
@@ -67,15 +81,15 @@ const StyledButton = styled.button`
   ${sizeStyles}
   /* 색상 */
   ${colorStyles}
-  /* 기타 */
-  & + & {
+  &:not(:first-child) {
     margin-left: 1rem;
   }
+  ${fullWidthStyle}/* 기타 */
 `
 
-function Button({ children, color, size, outline, ...rest }) {
+function Button({ children, color, size, outline, fullWidth, ...rest }) {
   return (
-    <StyledButton color={color} size={size} outline={outline} {...rest}>
+    <StyledButton color={color} size={size} outline={outline} fullWidth={fullWidth} {...rest}>
       {children}
     </StyledButton>
   )
