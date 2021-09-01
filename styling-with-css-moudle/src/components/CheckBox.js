@@ -7,11 +7,11 @@ const cx = classNames.bind(styles)
 
 function CheckBox({ checked, children, ...rest }) {
   return (
-    <div className={styles.checkbox}>
+    <div className={cx('checkbox')}>
       <label>
         <input type="checkbox" checked={checked} {...rest} />
-        <div className={styles.icon}>
-          {checked ? <MdCheckBox className={styles.checked} /> : <MdCheckBoxOutlineBlank />}
+        <div className={cx('icon')}>
+          {checked ? <MdCheckBox className={cx('checked')} /> : <MdCheckBoxOutlineBlank />}
         </div>
       </label>
       <span>{children}</span>
