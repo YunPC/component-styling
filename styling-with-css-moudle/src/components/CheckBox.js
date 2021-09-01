@@ -3,7 +3,7 @@ import React from 'react'
 function CheckBox({ checked, children, ...rest }) {
   return (
     <div>
-      <label htmlFor="checkbox">
+      <label>
         <input type="checkbox" checked={checked} {...rest} />
         <div>{checked ? '체크됨' : '체크 안됨'}</div>
       </label>
