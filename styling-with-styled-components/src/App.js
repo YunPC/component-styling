@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import Button from './components/Button'
 import Dialog from './components/Dialog'
@@ -11,11 +11,11 @@ const AppBlock = styled.div`
   padding: 1rem;
 `
 
-const ButtonGroup = styled.div`
-  & + & {
-    margin-top: 1rem;
-  }
-`
+// const ButtonGroup = styled.div`
+//   & + & {
+//     margin-top: 1rem;
+//   }
+// `
 
 const palette = {
   blue: '#228be6',
@@ -24,41 +24,32 @@ const palette = {
 }
 
 function App() {
+  const [dialog, setDialog] = useState(false)
+  const onClick = () => {
+    setDialog(true)
+  }
+  const onConfirm = () => {
+    setDialog(false)
+  }
+  const onCancel = () => {
+    setDialog(false)
+  }
   return (
     <ThemeProvider theme={palette}>
       <>
         <AppBlock>
-          <ButtonGroup>
-            <Button color="pink" size="large">
-              Button
-            </Button>
-            <Button>Button</Button>
-            <Button color="gray" size="small">
-              Button
-            </Button>
-          </ButtonGroup>
-          <ButtonGroup>
-            <Button color="pink" size="large" outline>
-              Button
-            </Button>
-            <Button outline>Button</Button>
-            <Button color="gray" size="small" outline>
-              Button
-            </Button>
-          </ButtonGroup>
-          <ButtonGroup>
-            <Button color="pink" size="large" fullWidth>
-              Button
-            </Button>
-            <Button size="large" fullWidth>
-              Button
-            </Button>
-            <Button color="gray" size="large" fullWidth>
-              Button
-            </Button>
-          </ButtonGroup>
+          <Button color="pink" size="large" onClick={onClick}>
+            삭제
+          </Button>
         </AppBlock>
-        <Dialog title="정말로 삭제하시겠습니까?" confirmText="삭제" cancelTex="취소">
+        <Dialog
+          title="정말로 삭제하시겠습니까?"
+          confirmText="삭제"
+          cancelText="취소"
+          visible={dialog}
+          onCancel={onCancel}
+          onConfirm={onConfirm}
+        >
           데이터를 정말로 삭제하시겠습니까?
         </Dialog>
       </>
