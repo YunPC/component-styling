@@ -6,10 +6,16 @@ const Circle = styled.div`
   height: 5rem;
   background: ${(props) => props.color};
   border-radius: 50%;
+  ${(props) =>
+    props.huge &&
+    `
+    width: 10rem;
+    height: 10rem;
+  `}
 `
 
 function App() {
-  return <Circle color="blue" />
+  return <Circle color="blue" huge />
 }
 
 export default App
