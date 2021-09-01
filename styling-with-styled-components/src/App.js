@@ -26,40 +26,42 @@ const palette = {
 function App() {
   return (
     <ThemeProvider theme={palette}>
-      <AppBlock>
-        <ButtonGroup>
-          <Button color="pink" size="large">
-            Button
-          </Button>
-          <Button>Button</Button>
-          <Button color="gray" size="small">
-            Button
-          </Button>
-        </ButtonGroup>
-        <ButtonGroup>
-          <Button color="pink" size="large" outline>
-            Button
-          </Button>
-          <Button outline>Button</Button>
-          <Button color="gray" size="small" outline>
-            Button
-          </Button>
-        </ButtonGroup>
-        <ButtonGroup>
-          <Button color="pink" size="large" fullWidth>
-            Button
-          </Button>
-          <Button size="large" fullWidth>
-            Button
-          </Button>
-          <Button color="gray" size="large" fullWidth>
-            Button
-          </Button>
-        </ButtonGroup>
+      <>
+        <AppBlock>
+          <ButtonGroup>
+            <Button color="pink" size="large">
+              Button
+            </Button>
+            <Button>Button</Button>
+            <Button color="gray" size="small">
+              Button
+            </Button>
+          </ButtonGroup>
+          <ButtonGroup>
+            <Button color="pink" size="large" outline>
+              Button
+            </Button>
+            <Button outline>Button</Button>
+            <Button color="gray" size="small" outline>
+              Button
+            </Button>
+          </ButtonGroup>
+          <ButtonGroup>
+            <Button color="pink" size="large" fullWidth>
+              Button
+            </Button>
+            <Button size="large" fullWidth>
+              Button
+            </Button>
+            <Button color="gray" size="large" fullWidth>
+              Button
+            </Button>
+          </ButtonGroup>
+        </AppBlock>
         <Dialog title="정말로 삭제하시겠습니까?" confirmText="삭제" cancelTex="취소">
           데이터를 정말로 삭제하시겠습니까?
         </Dialog>
-      </AppBlock>
+      </>
     </ThemeProvider>
   )
 }
