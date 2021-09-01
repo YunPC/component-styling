@@ -1,5 +1,8 @@
 import React from 'react'
 import { MdCheckBox, MdCheckBoxOutlineBlank } from 'react-icons/md'
+import styles from './CheckBox.module.css'
+
+console.log(styles)
 
 function CheckBox({ checked, children, ...rest }) {
   return (
