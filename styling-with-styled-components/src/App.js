@@ -27,9 +27,13 @@ function App() {
     <ThemeProvider theme={palette}>
       <AppBlock>
         <ButtonGroup>
-          <Button size="large">Button</Button>
+          <Button color="pink" size="large">
+            Button
+          </Button>
           <Button>Button</Button>
-          <Button size="small">Button</Button>
+          <Button color="gray" size="small">
+            Button
+          </Button>
         </ButtonGroup>
       </AppBlock>
     </ThemeProvider>
