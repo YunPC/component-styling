@@ -23,10 +23,10 @@ const StyledButton = styled.button`
   /* 색상 */
   background: #228be6;
   &:hover {
-    background: #339af0;
+    background: ${lighten(0.1, '#228be6')};
   }
   &:active {
-    background: #1c7ed6;
+    background: ${darken(0.1, '#228be6')};
   }
 
   /* 기타 */
